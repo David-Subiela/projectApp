@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Clase5_proyecto.DTOs.PilotoDto>
+
+<link rel="stylesheet" type="text/css" href="~/css/Piloto/styles.css" />
+
+<div class="table-container">
+    <h2>Lista de Pilotos</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre Completo</th>
+                <th>Número de Licencia</th>                
+                <th>Horas de Vuelo Acumuladas</th>
+                <th>Disponibilidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var piloto in Model)
+            {
+                <tr>
+                    <td>@piloto.Id</td>
+                    <td>@piloto.NombreCompleto</td>
+                    <td>@piloto.NumeroLicencia</td>
+                    <td>@piloto.HorasVueloAcumuladas</td>
+                    <td>@piloto.Disponibilidad</td>                    
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

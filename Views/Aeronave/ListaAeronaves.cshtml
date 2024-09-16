@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Clase5_proyecto.DTOs.AeronaveDto>
+
+<link rel="stylesheet" type="text/css" href="~/css/Aeronave/styles.css" />
+
+<div class="table-container">
+    <h2>Lista de Aeronaves</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tipo</th>
+                <th>Modelo</th>
+                <th>Capacidad de Carga</th>
+                <th>Horas de Vuelo</th>
+                <th>Disponibilidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var aeronave in Model)
+            {
+                <tr>
+                    <td>@aeronave.Id</td>
+                    <td>@aeronave.Tipo</td>
+                    <td>@aeronave.Model</td>
+                    <td>@aeronave.CapacidadCarga</td>
+                    <td>@aeronave.HorasVuelo</td>
+                    <td>@aeronave.Disponibilidad</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
