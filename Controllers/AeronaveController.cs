@@ -30,7 +30,7 @@ namespace Clase5_proyecto.Controllers
 
         // PARA VINCULAR CON EL FRONTEND:  
         [HttpGet("lista")]     
-        public async Task<ActionResult> ListaAeronaves()
+        public async Task<IActionResult> ListaAeronaves()
         {
             var aeronaves = await _aeronaveService.Get();
             return View(aeronaves);
