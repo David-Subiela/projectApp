@@ -25,7 +25,7 @@ builder.Services.AddScoped<IValidator<AeronaveInsertDto>, AeronaveInsertValidato
 // VALIDADORES PILOTO:
 builder.Services.AddScoped<IPilotoService, PilotoService>();
 builder.Services.AddScoped<IValidator<PilotoInsertDto>, PilotoInsertValidator>();
-// VALIDADORES MISIÓN EMERGENCIA:
+// VALIDADORES MISIÃ“N EMERGENCIA:
 builder.Services.AddScoped<IMisionEmergenciaService, MisionEmergenciaService>();
 builder.Services.AddScoped<IValidator<MisionEmergenciaInsertDto>, MisionEmergenciaInsertValidator>();
 
@@ -61,8 +61,13 @@ app.MapControllerRoute
 // AERONAVES:
 app.MapControllerRoute
 (
-    name: "default",
-    pattern: "{controller=Aeronave}/{action=ListaAeronaves}/{id?}"
+    name: "aeronaves",
+    pattern: "Aeronave/ListaAeronaves/{id?}",
+    defaults: new { controller = "Aeronave", action = "ListaAeronaves" }
+//Forma 2:
+    //name: "aeronaves",
+    //pattern: "{controller=Aeronave}/{action=ListaAeronaves}/{id?}"
+
     // POR DEFECTO: pattern: "{controller=Home}/{action=Index}/{id?}");
 );
 
@@ -73,7 +78,7 @@ app.MapControllerRoute
     pattern: "{controller=Piloto}/{action=ListaPilotos}/{id?}"
 );
 
-// MISIÓN EMERGENCIA:
+// MISIÃ“N EMERGENCIA:
 app.MapControllerRoute
 (
     name: "default",
